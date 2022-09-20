@@ -5,22 +5,22 @@ To use the API, run the Solver.API project and use the swagger ui.
 The server property needs to be changed to make the connection strings work.
 
 ## Problem - 1
--Completed
+Completed
 ## Problem - 2
--Not completed
+Not completed
 ## Problem - 3
--Not completed
+Not completed
 ## Problem - 4
--Completed
+Completed
 
 ## Bonus Questions
-#### -Paging
+### Paging
 Completed
-#### -Reduce JSON payload size
+### Reduce JSON payload size
 Partially completed
-#### -Display Foreign Keys
+### Display Foreign Keys
 Not completed
-#### -Front End
+### Front End
 Completed
 
 ### Discarded Ideas
