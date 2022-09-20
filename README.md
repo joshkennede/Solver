@@ -18,7 +18,7 @@ After the dependencies are installed, run `npm run start` and navigate to 'http:
     - Real column name
     - Table name
     - Database name
-    - Customer's unique id tied to custome column names
+    - Customer's unique id tied to customer column names
   - Write the necessary logic to map the query from problem #1 endpoints to get the customer's custom column names. 
     - This would be done in the Solver.Service library.
 ## Problem - 3
@@ -65,3 +65,4 @@ I'm still new to angular as I mostly work on frontends that are tightly coupled 
 - Most trade offs were because of either trying to learn a new tool and or the time constraint.
 ### Future Changes
 - I would spend time completing problem #2, #3, and #4 after getting feedback and additional questions answered.
+- I would add logging and error handling to the service layer
