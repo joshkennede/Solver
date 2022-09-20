@@ -18,5 +18,5 @@ export interface ISolverService {
    * @param schema
    * @param tableName
    */
-  generateCsv(databaseId: string, schema: string, tableName: string): Observable<any>;
+  generateCsv(databaseId: string, schema: string, tableName: string): Observable<SolverPagedResponse>;
 }

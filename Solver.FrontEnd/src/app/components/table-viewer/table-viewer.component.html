@@ -9,7 +9,7 @@
     <input type="text" name="tableName" [(ngModel)]="tableName">
     <div>
       <button (click)="getData()">Get Data</button>
-      <p *ngIf="validationMessage" class="validate">{{ validationMessage }}</p>
+      <p *ngIf="validationMessage and !response?.length" class="validate">{{ validationMessage }}</p>
       <span *ngIf="loading">
         Loading results...
       </span>

@@ -2,7 +2,6 @@ export class SolverResponse {
 
   data: [];
   columns: [];
-  values: [];
   succeeded: boolean;
   errors: [];
   message: string;
@@ -10,13 +9,11 @@ export class SolverResponse {
   constructor(
     data: [],
     columns: [],
-    values: [],
     succeeded: boolean,
     errors: [],
     message: string) {
     this.data = data;
     this.columns = columns;
-    this.values = values;
     this.succeeded = succeeded;
     this.errors = errors;
     this.message = message;
@@ -27,7 +24,6 @@ export class SolverPagedResponse {
 
   data: [];
   columns: [];
-  values: [];
   succeeded: boolean;
   errors: [];
   message: string;
@@ -43,7 +39,6 @@ export class SolverPagedResponse {
   constructor(
     data: [],
     columns: [],
-    values: [],
     succeeded: boolean,
     errors: [],
     message: string,
@@ -57,7 +52,6 @@ export class SolverPagedResponse {
     previousPage: string) {
     this.data = data;
     this.columns = columns;
-    this.values = values;
     this.succeeded = succeeded;
     this.errors = errors;
     this.message = message;

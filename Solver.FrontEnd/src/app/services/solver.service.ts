@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { SolverPagedResponse, SolverResponse } from '../models/solver-response.model';
+import { SolverPagedResponse } from '../models/solver-response.model';
 import { ISolverService } from './solver-api.service';
 
 @Injectable({
@@ -31,7 +31,7 @@ export class SolverService implements ISolverService {
     return this.http.get<any>(this.APIUrl + databaseId + '/data/' + schema + '/' + tableName, { params: params });
   }
     
-  generateCsv(databaseId: string, schema: string, tableName: string): Observable<SolverResponse> {
+  generateCsv(databaseId: string, schema: string, tableName: string): Observable<SolverPagedResponse> {
     console.log('HTTPpost');
     console.log(`DatabaseId: ${databaseId}`);
     console.log(`Schema: ${schema}`);

@@ -36,6 +36,9 @@ export class TableViewerComponent implements OnInit {
           this.response = s.data;
           this.columns = s.columns;
           this.message = s.message;
+          if (this.response.length > 0) {
+            this.validationMessage = '';
+          }
         });
     } else {
       return this.validationMessage = this.formMessage;
