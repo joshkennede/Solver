@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SolverService } from 'src/app/services/solver.service';
 import { KeyValue } from '@angular/common';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-table-viewer',
@@ -10,24 +9,17 @@ import { NgxPaginationModule } from 'ngx-pagination';
 })
 export class TableViewerComponent implements OnInit {
 
-  //class instance
   loading: boolean = false;
   generating: boolean = false;
-
-  //input
-  databaseId: string = 'adventureworks2019';
-  schema: string = 'production';
-  tableName: string = 'billofmaterials';
-  pageNumber: number | undefined;
-  pageSize: number | undefined;
-
-  //output
+  databaseId: string = '';
+  schema: string = '';
+  tableName: string = '';
   response: [] | undefined;
   columns: string[] | undefined;
   message: string | undefined;
-
-  //pagination
   page: number = 1;
+  pageNumber: number | undefined;
+  pageSize: number | undefined;
 
   constructor(private service: SolverService) {}
 
