@@ -1,8 +1,7 @@
 # Solver
 ## Solver Project
 
-To use the API, run the Solver.API project and use the swagger ui.
-The server property needs to be changed to make the connection strings work.
+To use the API, run the Solver.API project and use the swagger ui. Be sure to change connection strings to reference appropriate server
 
 To use the Angular app, run `npm install` on the 'Solver.FrontEnd' directory.
 After the dependencies are installed, run `npm run start` and navigate to 'http://localhost:4200'.
