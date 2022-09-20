@@ -26,10 +26,14 @@ Not completed
 Completed
 
 ### Discarded Ideas
-
+-Using EF for database access
+-Creating POCO objects for each database
 ### Pursued Ideas
-
+-Used Dapper for database access
+-Used Angular for front end
 ### General Choices
+-Service layer
+-Repository layer
 
 ### Trade Offs
 
