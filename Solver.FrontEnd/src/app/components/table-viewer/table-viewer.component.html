@@ -1,0 +1,48 @@
+<h1>Table Data Viewer</h1>
+<div class="row">
+  <div class="column">
+    <label>Database:</label>
+    <input type="text" name="databaseId" [(ngModel)]="databaseId">
+    <label>Schema:</label>
+    <input type="text" name="schema" [(ngModel)]="schema">
+    <label>Table Name:</label>
+    <input type="text" name="tableName" [(ngModel)]="tableName">
+    <div>
+      <button (click)="getData()">Get Data</button>
+      <span *ngIf="loading">
+        Loading results...
+      </span>
+    </div>
+    <div>
+      <button *ngIf="response?.length" (click)="generateCSV()">Generate CSV</button>
+      <span *ngIf="generating">
+        Generating csv file...
+      </span>
+    </div>
+  </div>
+    <div class="column">
+      <label>Page Number:</label>
+      <input type="number" name="pageNumber" [(ngModel)]="pageNumber">
+      <label>Page Size:</label>
+      <input type="number" name="pageSize" [(ngModel)]="pageSize">
+    </div>
+</div>
+
+<table id="table" class="table table-bordered table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th *ngFor="let column of columns">
+        {{ column }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let value of response">
+      <td *ngFor="let result of value | keyvalue: onCompare | paginate: { itemsPerPage: 10, currentPage: page }">
+        {{ result.value }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls *ngIf="response?.length" (pageChange)="page = ($event)">
+</pagination-controls>

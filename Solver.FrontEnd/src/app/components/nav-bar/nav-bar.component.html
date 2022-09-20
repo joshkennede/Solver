@@ -1,0 +1,20 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <a [routerLink]="['/']" title="Home"></a>
+      </div>
+      <div class="col-md-5">
+      </div>
+      <div class="col-md-3">
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" (change)="onCheckboxChange($event)" />
+            <div class="slider round"></div>
+          </label>
+          <div class="darkmode">Dark Mode</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
