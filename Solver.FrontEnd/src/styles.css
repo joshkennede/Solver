@@ -220,6 +220,19 @@ input:checked + .slider {
     border-radius: 50%;
   }
 
+.validationMessage {
+  width: 40vw;
+  margin: 0.125rem 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: 'Jost';
+  color: var(--secondary-color);
+}
+
+.validationMessage {
+  transition-delay: 3s;
+}
+
 @media only screen and (max-width: 950px) {
   .left-col {
     width: auto;

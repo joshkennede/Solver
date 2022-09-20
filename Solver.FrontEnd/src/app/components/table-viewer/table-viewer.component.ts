@@ -8,18 +8,19 @@ import { KeyValue } from '@angular/common';
   styleUrls: ['./table-viewer.component.css']
 })
 export class TableViewerComponent implements OnInit {
-
-  loading: boolean = false;
-  generating: boolean = false;
-  databaseId: string = '';
-  schema: string = '';
-  tableName: string = '';
-  response: [] | undefined;
-  columns: string[] | undefined;
-  message: string | undefined;
-  page: number = 1;
-  pageNumber: number | undefined;
-  pageSize: number | undefined;
+  public formMessage = "Please fill out all fields";
+  public validationMessage: string | undefined;
+  public loading: boolean = false;
+  public generating: boolean = false;
+  public databaseId: string = '';
+  public schema: string = '';
+  public tableName: string = '';
+  public response: [] | undefined;
+  public columns: string[] | undefined;
+  public message: string | undefined;
+  public page: number = 1;
+  public pageNumber: number | undefined;
+  public pageSize: number | undefined;
 
   constructor(private service: SolverService) {}
 
@@ -27,14 +28,18 @@ export class TableViewerComponent implements OnInit {
   }
 
   getData() {
-    this.loading = true;
-    return this.service.getTableData(this.databaseId, this.schema, this.tableName, this.pageNumber, this.pageSize)
-      .subscribe(s => {
-        this.loading = false;
-        this.response = s.data;
-        this.columns = s.columns;
-        this.message = s.message;
-      });
+    if (this.isFormComplete(this.databaseId, this.schema, this.tableName)) {
+      this.loading = true;
+      return this.service.getTableData(this.databaseId, this.schema, this.tableName, this.pageNumber, this.pageSize)
+        .subscribe(s => {
+          this.loading = false;
+          this.response = s.data;
+          this.columns = s.columns;
+          this.message = s.message;
+        });
+    } else {
+      return this.validationMessage = this.formMessage;
+    }
   }
 
   generateCSV() {
@@ -44,6 +49,13 @@ export class TableViewerComponent implements OnInit {
         this.generating = false;
         alert(s.message);
     });
+  }
+
+  isFormComplete(databaseId: string, schema: string, tableName: string): boolean {
+    if (!databaseId || !schema || !tableName) {
+      return false;
+    }
+    return true;
   }
 
   onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
