@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solver.API", "Solver.API\Solver.API.csproj", "{A942A1A7-5D80-4DFC-A893-5B14FB1E5292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solver.API", "Solver.API\Solver.API.csproj", "{A942A1A7-5D80-4DFC-A893-5B14FB1E5292}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solver.Service", "Solver.Service\Solver.Service.csproj", "{C1E500B5-932F-4E44-8513-0D90E063AF8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solver.Service", "Solver.Service\Solver.Service.csproj", "{C1E500B5-932F-4E44-8513-0D90E063AF8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solver.Repository", "Solver.Repository\Solver.Repository.csproj", "{51B75B1F-7E83-4478-A001-49A198773C2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solver.Repository", "Solver.Repository\Solver.Repository.csproj", "{51B75B1F-7E83-4478-A001-49A198773C2A}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Solver.FrontEnd", "Solver.FrontEnd\", "{E0D46AC8-8990-4389-A730-A7D4C8BE7320}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -28,6 +28,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Solver.FrontEnd", "Solver.F
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "49898"
 		SlnRelativePath = "Solver.FrontEnd\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D018DDA-A948-411A-8931-5CF5A0B27657}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
