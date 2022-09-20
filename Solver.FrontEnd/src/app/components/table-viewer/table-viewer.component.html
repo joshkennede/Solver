@@ -12,6 +12,9 @@
       <span *ngIf="loading">
         Loading results...
       </span>
+      <span *ngIf="!response?.length">
+        {{ message }}
+      </span>
     </div>
     <div>
       <button *ngIf="response?.length" (click)="generateCSV()">Generate CSV</button>

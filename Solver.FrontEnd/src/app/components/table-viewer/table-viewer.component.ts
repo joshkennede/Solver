@@ -22,8 +22,9 @@ export class TableViewerComponent implements OnInit {
   pageSize: number | undefined;
 
   //output
-  response: [] = [];
-  columns: string[] = [];
+  response: [] | undefined;
+  columns: string[] | undefined;
+  message: string | undefined;
 
   //pagination
   page: number = 1;
@@ -40,6 +41,7 @@ export class TableViewerComponent implements OnInit {
         this.loading = false;
         this.response = s.data;
         this.columns = s.columns;
+        this.message = s.message;
       });
   }
 

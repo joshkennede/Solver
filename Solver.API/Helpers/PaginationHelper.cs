@@ -16,6 +16,9 @@ namespace Solver.API.Helpers
             var totalPages = ((double)totalRecords / (double)pagination.PageSize);
             var roundedTotalPages = Convert.ToInt32(Math.Ceiling(totalPages));
 
+            if (response.Data == null)
+                response.Message = "No Records Found";
+
             response.NextPage = uriService.SetPageUri(pagination, roundedTotalPages, route);
             response.PreviousPage = uriService.SetPageUri(pagination, roundedTotalPages, route);
             response.FirstPage = uriService.GetPageUri(new Pagination(1, pagination.PageSize), route);
@@ -26,6 +29,6 @@ namespace Solver.API.Helpers
         }
 
         public static List<string> GetColumns(IEnumerable<IDictionary<string, object>> data)
-            => data.SelectMany(d => d.Keys).Distinct().ToList();
+            => data?.SelectMany(d => d.Keys).Distinct().ToList();
     }
 }

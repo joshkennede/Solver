@@ -9,7 +9,7 @@ import { ISolverService } from './solver-api.service';
 })
 
 export class SolverService implements ISolverService {
-  private readonly APIUrl: string = "https://localhost:7290/api/";
+  private readonly APIUrl: string = "https://localhost:7121/api/";
   constructor(private http: HttpClient) {
   }
 

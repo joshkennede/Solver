@@ -27,20 +27,10 @@ namespace Solver.API.Controllers
         public async Task<IActionResult> GetTableData([FromQuery] Pagination pagination, string databaseId, string schema, string tableName)
         {
             var data = await solverService.GetDataAsDictionary(databaseId, schema, tableName);
-
-            if (data == null)
-            {
-                return Ok(new SolverResponse<string>
-                {
-                    Succeeded = false,
-                    Message = "No records found."
-                });
-            }
-
             var filter = new Pagination(pagination.PageNumber, pagination.PageSize);
-            var pagedData = data.Skip((filter.PageNumber - 1) * filter.PageSize).Take(filter.PageSize);
-            var pagedResponse = PaginationHelper.CreatePagedResponse(pagedData.ToList(), filter, data.ToList().Count, uriService, Request.Path.Value);
-            pagedResponse.Columns = PaginationHelper.GetColumns(pagedData.ToList());
+            var pagedData = data?.Skip((filter.PageNumber - 1) * filter.PageSize).Take(filter.PageSize);
+            var pagedResponse = PaginationHelper.CreatePagedResponse(pagedData?.ToList(), filter, data?.ToList().Count ?? 0, uriService, Request.Path.Value);
+            pagedResponse.Columns = PaginationHelper.GetColumns(pagedData?.ToList());
 
             return Ok(pagedResponse);
         }
