@@ -16,13 +16,10 @@ The server property needs to be changed to make the connection strings work.
 ### Bonus Questions
 #### Paging
 -Completed
-
 #### Reduce JSON payload size
 -Partially completed
-
 #### Display Foreign Keys
 -Not completed
-
 #### Front End
 -Completed
 
