@@ -54,7 +54,7 @@ I'm still new to angular as I mostly work on frontends that are tightly coupled 
   - Since Solver uses Dapper, I thought I should learn and use for this project.
 - Used Angular for front end
   - Instead of using a more tightly coupled frontend/backend setup (like ASP.NET Core MVC), I've been wanting to learn angular and thought it would work well for a simple frontend.
-  - I repurposed an existing angular app I used for learning on anthor project.
+  - I repurposed an existing angular app I used for learning on another project.
 ### General Choices
 - Service layer
   - I split out the service layer to another library for future enhancement.
