@@ -30,10 +30,10 @@ namespace Solver.API.Controllers
             var filter = new Pagination(pagination.PageNumber, pagination.PageSize);
             var pagedData = data?.Skip((filter.PageNumber - 1) * filter.PageSize).Take(filter.PageSize);
             var pagedResponse = PaginationHelper.CreatePagedResponse(pagedData?.ToList(), filter, data?.ToList().Count ?? 0, uriService, Request.Path.Value);
-            pagedResponse.Columns = PaginationHelper.GetColumns(pagedData?.ToList());
+            pagedResponse.Columns = (await solverService.GetCustomColumnsForCustomerByTableName(databaseId, schema, tableName)).ToList(); //PaginationHelper.GetColumns(pagedData?.ToList());
 
             return Ok(pagedResponse);
-        }
+        }                                     
 
         [HttpPost]
         [Route("{databaseId}/data/{schema}/{tableName}")]

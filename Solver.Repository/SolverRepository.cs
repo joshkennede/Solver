@@ -13,6 +13,21 @@ namespace Solver.Repository
             this.connectionString = connectionString;
         }
 
+        public async Task<IEnumerable<string>> GetCustomerColumnName(string databaseId, string schema, string tableName)
+        {
+            var tableExists = await VerifyTableExists(databaseId, schema, tableName);
+            if (tableExists)
+            {
+                var sqlQuery = $"SELECT CustomerColumnName FROM [Customer.ColumnMap] WHERE TableName = @tableName";
+                using (IDbConnection db = new SqlConnection(connectionString.Value))
+                {
+                    var data = db.Query<string>(sqlQuery, new { tableName });
+                    return data;
+                }
+            }
+            return Enumerable.Empty<string>();
+        }
+
         public async Task<IEnumerable<IDictionary<string, object>>?> GetDataAsDictionary(string databaseId, string schema, string tableName)
         {
             var tableExists = await VerifyTableExists(databaseId, schema, tableName);

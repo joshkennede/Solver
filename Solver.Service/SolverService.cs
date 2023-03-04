@@ -32,9 +32,18 @@ namespace Solver.Service
                 return null;
         }
 
-        public Task<IEnumerable<string>> GetCustomColumnsForCustomerById(Guid customerId)
+        public async Task<IEnumerable<string>> GetCustomColumnsForCustomerByTableName(string databaseId, string schema, string tableName)
         {
-            throw new NotImplementedException();
+            //var columns = new List<string>();
+
+            //columns.Add("Department Id");
+            //columns.Add("Name");
+            //columns.Add("Group Name");
+            //columns.Add("Modified Date");
+
+            var columns = await repository.GetCustomerColumnName(databaseId, schema, tableName);
+
+            return columns;
         }
 
         public async Task<(bool, string)> GenerateCSV(IEnumerable<object> results, string fileNameAndPath)
